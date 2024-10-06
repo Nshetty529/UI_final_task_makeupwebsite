@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Party Makeovers - Gleam & Glam</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <style>
+     body {
+        font-family: "Dancing Script", cursive;
+        margin: 0;
+        padding: 0;
+      }
+
+      .sticky-header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        /* background-color: #fff; */
+        background-color: #420403;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      body {
+        color: #380e0e; /* Darkish maroon */
+      }
+      .sticky-header {
+        /* background-color: #fff7f7;  */
+        background-color: #2d0504;
+      }
+      
+      .navbar-nav .nav-link {
+        transition: transform 0.2s ease; /* Smooth transition */
+      }
+
+      .navbar-nav .nav-link:hover {
+        transform: scale(1.2); /* Increase size on hover */
+        color: white;
+      }
+      .nav-link {
+        color: white; /* Darkish maroon for nav links */
+      }
+      .section {
+        padding: 60px 0;
+      }
+      .footer {
+        background-color: #2b0405;
+        color: white;
+        padding: 20px 0;
+      }
+      .service-image {
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      .service-card {
+        border: 2px solid #6f2c2c;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        margin: 20px 0;
+        transition: transform 0.2s;
+        background-color: rgb(60, 4, 4);
+        color: white;
+        height: 250px;
+      }
+      .service-card:hover {
+        transform: scale(1.05);
+      }
+      .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+      }
+      .service-title {
+        font-size: 24px;
+        margin-top: 20px;
+        font-weight: bold;
+      }
+      .gallery-img {
+        object-fit: cover;
+        border: 5px solid #380e0e;
+        border-radius: 15px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        margin-bottom: 20px;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeIn 0.6s forwards;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+      .gallery-img:hover {
+        transform: scale(1.6);
+        opacity: 1;
+      }
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .gallery-img:nth-child(1) { animation-delay: 0.1s; }
+      .gallery-img:nth-child(2) { animation-delay: 0.2s; }
+      .gallery-img:nth-child(3) { animation-delay: 0.3s; }
+      .gallery-img:nth-child(4) { animation-delay: 0.4s; }
+      .gallery-img:nth-child(5) { animation-delay: 0.5s; }
+      .gallery-img:nth-child(6) { animation-delay: 0.6s; }
+      .gallery-img:nth-child(7) { animation-delay: 0.7s; }
+      .gallery-img:nth-child(8) { animation-delay: 0.8s; }
+      .gallery-img:nth-child(9) { animation-delay: 0.9s; }
+    </style>
+  </head>
+  <body>
+    <!-- Header & Navigation Bar -->
+    <header class="sticky-header">
+      <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">
+          <img src="./Screenshot 2024-10-04 225615.jpg" alt="Logo" width="35" />
+        </a>
+        <h2 style="color: white">Gleam & Glam</h2>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" style="color: white;" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: white;" href="about.html">About</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="servicesDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+                style="color: white;"
+              >
+                Services
+              </a>
+              <div class="dropdown-menu" aria-labelledby="servicesDropdown">
+                <a class="dropdown-item" href="bridal.html">Bridal Makeover</a>
+                <a class="dropdown-item" href="party.html">Party Makeover</a>
+                <a class="dropdown-item" href="minimal.html">Minimal Makeover</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: white;" href="#testimonials">Testimonials</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: white;" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Party Makeup Section -->
+    <section class="section" style="background-color: #f3e8e8">
+      <div class="container text-center">
+        <h2>Party Makeovers</h2>
+        <p>
+          At Gleam & Glam, we understand that every party is an opportunity to shine. Our talented makeup artists are here to craft stunning looks that match the theme and vibe of your celebration. Whether it's a birthday, anniversary, or a night out with friends, we ensure you feel confident and beautiful. With customized packages tailored to your needs, let us elevate your look and make your special occasions unforgettable!
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="text-center">Party Gallery</h2>
+        <div class="row">
+          <!-- Repeat this div for each image -->
+          <div class="col-md-4">
+            <img src="https://img.freepik.com/free-photo/portrait-beautiful-girl-model-with-evening-makeup-romantic-hairstyle-red-lips_158538-9340.jpg?w=740&t=st=1728204798~exp=1728205398~hmac=00409cd2e480c1130e49587da51ed7a41a50452751d426e4599b6bb9946c5fed" class="gallery-img" alt="Party Look 1" />
+          </div>
+          <div class="col-md-4">
+            <img src="https://img.freepik.com/premium-photo/woman-with-red-lip-red-lip-gloss_1202875-517.jpg?size=626&ext=jpg&ga=GA1.1.1728760024.1727609195&semt=ais_hybrid" class="gallery-img" alt="Party Look 2" />
+          </div>
+          <div class="col-md-4">
+            <img src="https://img.freepik.com/free-photo/beautiful-woman-with-roses-hair_144627-16468.jpg?t=st=1728204904~exp=1728208504~hmac=db0a17fd3538bb865eaa42789f14aae799f5dc6789e068bccc4cfa63e04ef51e&w=996" class="gallery-img" alt="Party Look 3" />
+          </div>
+          <div class="col-md-4">
+            <img src="https://img.freepik.com/free-photo/high-fashion-look-glamor-closeup-portrait-beautiful-sexy-stylish-blond-caucasian-young-woman-model_158538-2855.jpg?ga=GA1.1.1728760024.1727609195&semt=ais_hybrid" class="gallery-img" alt="Party Look 4" />
+          </div>
+          <div class="col-md-4">
+            <img src="https://img.freepik.com/free-photo/portrait-beautiful-sexy-stylish-caucasian-young-woman-model-with-red-natural-lips_158538-7958.jpg?t=st=1728204946~exp=1728208546~hmac=16f27dcc31c8772d09d6d764f30a22c3a37d2bc7f4e654caebcf771a03cc7142&w=360" class="gallery-img" alt="Party Look 5" />
+          </div>
+          <div class="col-md-4">
+            <img src="https://img.freepik.com/free-photo/beauty-portrait-young-brunette-woman-with-evening-makeup-perfect-clean-skin-sexy-model-with-curly-hair-posing-studio-near-dark-wall-with-red-bright-natural-lips-silver-dress_158538-23835.jpg?t=st=1728205016~exp=1728208616~hmac=3650e33502a34155f85d953a770d847784798fb2e9e0f16a51348fc8cbf20c95&w=826" class="gallery-img" alt="Party Look 6" />
+          </div>
+          <div class="col-md-4">
+            <img src="https://img.freepik.com/free-photo/model-with-smokey-eyes-golden-circle-earrings_114579-9306.jpg?ga=GA1.1.1728760024.1727609195&semt=ais_hybrid" class="gallery-img" alt="Party Look 7" />
+          </div>
+          <div class="col-md-4">
+            <img src="https://img.freepik.com/free-photo/high-fashion-look-glamor-closeup-portrait-beautiful-sexy-redhead-caucasian-young-woman-model-with-red-lips-bright-makeup-with-perfect-clean-skin-with-jewelery-isolated-black_158538-14504.jpg?ga=GA1.1.1728760024.1727609195&semt=ais_hybrid" class="gallery-img" alt="Party Look 8" />
+          </div>
+          <div class="col-md-4">
+            <img src="https://img.freepik.com/free-photo/model-with-long-eyelashes-lip-filling_114579-9300.jpg?ga=GA1.1.1728760024.1727609195&semt=ais_hybrid" class="gallery-img" alt="Party Look 9" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="section" style="background-color: #f3e8e8">
+      <div class="container text-center">
+        <h2>Why Choose Us?</h2>
+        <p>
+          Our team is dedicated to providing exceptional party makeup services
+          that enhance your beauty for any occasion.
+        </p>
+        <ul class="list-unstyled">
+          <li>
+            <i class="fas fa-check-circle"></i> Experienced and skilled makeup
+            artists
+          </li>
+          <li>
+            <i class="fas fa-check-circle"></i> Customized makeup to suit your
+            style
+          </li>
+          <li>
+            <i class="fas fa-check-circle"></i> High-quality products for a
+            flawless finish
+          </li>
+          <li>
+            <i class="fas fa-check-circle"></i> Friendly and professional
+            service
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Services Covered Section -->
+    <div class="container text-center mt-5">
+      <h2>Why Choose Us for Your Party Makeup?</h2>
+      <p>
+        Our dedicated team of professionals is committed to making your party
+        look extraordinary. Explore our comprehensive services designed to
+        enhance your beauty for any occasion.
+      </p>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card service-card">
+            <div class="card-body">
+              <h5 class="card-title font-weight-bold">Makeup Consultation</h5>
+              <p class="card-text">
+                We discuss your vision and preferences to create the perfect look for your event.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card service-card">
+            <div class="card-body">
+              <h5 class="card-title font-weight-bold">Skin Prep</h5>
+              <p class="card-text">
+                A flawless makeup application starts with well-prepped skin using top-notch products.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card service-card">
+            <div class="card-body">
+              <h5 class="card-title font-weight-bold">Party Makeup</h5>
+              <p class="card-text">
+                Our expert makeup artists will create a stunning look tailored just for you.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card service-card">
+            <div class="card-body">
+              <h5 class="card-title font-weight-bold">Hairstyling</h5>
+              <p class="card-text">
+                From chic styles to fun looks, our hairstylists will bring your vision to life.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card service-card">
+            <div class="card-body">
+              <h5 class="card-title font-weight-bold">Touch-ups</h5>
+              <p class="card-text">
+                Keep your makeup fresh and beautiful throughout your celebration with our touch-up services.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card service-card">
+            <div class="card-body">
+              <h5 class="card-title font-weight-bold">Party Trial</h5>
+              <p class="card-text">
+                Test your chosen look ahead of time and make necessary adjustments for peace of mind.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+      <div class="container">
+        @nikitashetty nocopyright
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

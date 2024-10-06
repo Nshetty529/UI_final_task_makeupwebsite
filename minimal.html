@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minimal Makeovers - Gleam & Glam</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <style>
+       body {
+        font-family: "Dancing Script", cursive;
+        margin: 0;
+        padding: 0;
+      }
+
+      .sticky-header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        /* background-color: #fff; */
+        background-color: #420403;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      body {
+        color: #380e0e; /* Darkish maroon */
+      }
+      .sticky-header {
+        /* background-color: #fff7f7;  */
+        background-color: #2d0504;
+      }
+      
+      .navbar-nav .nav-link {
+        transition: transform 0.2s ease; /* Smooth transition */
+      }
+
+      .navbar-nav .nav-link:hover {
+        transform: scale(1.2); /* Increase size on hover */
+        color: white;
+      }
+      .nav-link {
+        color: white; /* Darkish maroon for nav links */
+      }
+      .section {
+        padding: 60px 0;
+      }
+      .footer {
+        background-color: #2b0405;
+        color: white;
+        padding: 20px 0;
+      }
+      .service-image {
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      .service-card {
+        border: 2px solid #6f2c2c;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        margin: 20px 0;
+        transition: transform 0.2s;
+        color: rgb(60, 4, 4);
+        background-color: white;
+        height: 250px;
+      }
+      .service-card:hover {
+        transform: scale(1.05);
+      }
+      .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+      }
+      .service-title {
+        font-size: 24px;
+        margin-top: 20px;
+        font-weight: bold;
+      }
+      .gallery-img {
+        object-fit: cover;
+        border: 5px solid #380e0e;
+        border-radius: 15px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        margin-bottom: 20px;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeIn 0.6s forwards;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+      .gallery-img:hover {
+        transform: scale(1.6);
+        opacity: 1;
+      }
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .gallery-img:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .gallery-img:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .gallery-img:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      .gallery-img:nth-child(4) {
+        animation-delay: 0.4s;
+      }
+      .gallery-img:nth-child(5) {
+        animation-delay: 0.5s;
+      }
+      .gallery-img:nth-child(6) {
+        animation-delay: 0.6s;
+      }
+      .gallery-img:nth-child(7) {
+        animation-delay: 0.7s;
+      }
+      .gallery-img:nth-child(8) {
+        animation-delay: 0.8s;
+      }
+      .gallery-img:nth-child(9) {
+        animation-delay: 0.9s;
+      }
+      .pill-border {
+        border: 2px solid #6f2c2c; /* Dark maroon border */
+        border-radius: 140px; /* Fully rounded corners for a pill shape */
+        padding: 40px; /* Increased padding for spacing */
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.9
+        ); /* Slightly transparent background */
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); /* Dense shadow from all sides */
+        margin: 20px auto; /* Centering the pill border */
+        display: inline-block; /* To fit the content snugly */
+        transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
+      }
+
+      .pill-border:hover {
+        transform: translateY(-10px); /* Slight lift on hover */
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7); /* Darker shadow on hover */
+      }
+      
+    </style>
+  </head>
+  <body>
+    <!-- Header & Navigation Bar -->
+    <header class="sticky-header">
+      <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">
+          <img src="./Screenshot 2024-10-04 225615.jpg" alt="Logo" width="35" />
+        </a>
+        <h2 style="color: white">Gleam & Glam</h2>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" style="color: white" href="index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: white" href="about.html"
+                >About</a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="servicesDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+                style="color: white"
+              >
+                Services
+              </a>
+              <div class="dropdown-menu" aria-labelledby="servicesDropdown">
+                <a class="dropdown-item" href="bridal.html">Bridal Makeover</a>
+                <a class="dropdown-item" href="party.html">Party Makeover</a>
+                <a class="dropdown-item" href="minimal.html"
+                  >Minimal Makeover</a
+                >
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: white" href="testimonials.html"
+                >Testimonials</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: white" href="contact.html"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Minimal Makeup Section -->
+    <section class="section" style="background-color: #f3e8e8">
+      <div class="container text-center">
+        <h2>Minimal Makeovers</h2>
+        <p>
+          At Gleam & Glam, we believe that less is more. Our minimal makeup
+          services are designed to enhance your natural beauty while providing a
+          fresh and effortless look. Perfect for everyday wear or special
+          occasions, our skilled artists focus on creating radiant skin, soft
+          colors, and a polished appearance that lets your beauty shine through
+          without heavy makeup.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="text-center">Minimal Gallery</h2>
+        <div class="row">
+          <!-- Repeat this div for each image -->
+          <div class="col-md-4">
+            <img
+              src="https://img.freepik.com/free-photo/high-fashion-look-glamor-closeup-beauty-portrait-beautiful-caucasian-young-woman-model-with-nude-makeup-with-perfect-clean-skin-with-colorful-pink-lips_158538-12880.jpg?t=st=1728205683~exp=1728209283~hmac=ea8430d51c357a2bbba9db459188dd16096e928ff2fe8ef3fccb81d289baf590&w=360"
+              class="gallery-img"
+              alt="Minimal Look 1"
+            />
+          </div>
+          <div class="col-md-4">
+            <img
+              src="https://img.freepik.com/free-photo/portrait-beautiful-woman-wearing-traditional-sari-garment_23-2149565137.jpg?ga=GA1.1.1728760024.1727609195&semt=ais_hybrid"
+              class="gallery-img"
+              alt="Minimal Look 2"
+            />
+          </div>
+          <div class="col-md-4">
+            <img
+              src="https://img.freepik.com/free-photo/beauty-fashion-portrait-young-blond-woman-model-with-natural-makeup-perfect-skin-posing-touching-her-face_158538-8756.jpg?t=st=1728205736~exp=1728209336~hmac=61402e00ea5048914ccfc06796bc0abed82e97753e861757b9b432d48168d057&w=826"
+              class="gallery-img"
+              alt="Minimal Look 3"
+            />
+          </div>
+          <div class="col-md-4">
+            <img
+              src="https://img.freepik.com/free-photo/beauty-woman-face-closeup-isolated-black-background-beautiful-model-girl-makeup-gorgeous-lady-with-perfect-skin_639032-159.jpg?ga=GA1.1.1728760024.1727609195&semt=ais_hybrid"
+              class="gallery-img"
+              alt="Minimal Look 4"
+            />
+          </div>
+          <div class="col-md-4">
+            <img
+              src="https://img.freepik.com/free-photo/portrait-young-beautiful-brunette-woman-girl-model-with-nude-makeup-summer-clothes-posing-near-wall_158538-9068.jpg?ga=GA1.1.1728760024.1727609195&semt=ais_hybrid"
+              class="gallery-img"
+              alt="Minimal Look 5"
+            />
+          </div>
+          <div class="col-md-4">
+            <img
+              src=" https://img.freepik.com/free-photo/female-model-with-natural-make-up_23-2149084891.jpg?ga=GA1.1.1728760024.1727609195&semt=ais_hybrid"
+              class="gallery-img"
+              alt="Minimal Look 6"
+            />
+          </div>
+          <div class="col-md-4">
+            <img
+              src="https://img.freepik.com/free-photo/closeup-naked-woman-after-spa-procedures-looking-straight_176420-8760.jpg?ga=GA1.1.1728760024.1727609195&semt=ais_hybrid"
+              class="gallery-img"
+              alt="Minimal Look 7"
+            />
+          </div>
+          <div class="col-md-4">
+            <img
+              src="https://img.freepik.com/free-photo/beauty-portrait-charming-woman-posing_155003-8236.jpg?ga=GA1.1.1728760024.1727609195&semt=ais_hybrid"
+              class="gallery-img"
+              alt="Minimal Look 8"
+            />
+          </div>
+          <div class="col-md-4">
+            <img
+              src="https://img.freepik.com/free-photo/young-woman-wearing-trendy-hairstyle_23-2149478908.jpg?ga=GA1.1.1728760024.1727609195&semt=ais_hybrid"
+              class="gallery-img"
+              alt="Minimal Look 9"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <!-- Why Choose Us Section -->
+    <section class="section" style="background-color: white">
+      <div class="container text-center">
+        <div class="pill-border">
+          <h2>Why Choose Us?</h2>
+          <p>
+            Our minimal makeover services focus on delivering a fresh and
+            natural look while ensuring your beauty shines through.
+          </p>
+          <ul class="list-unstyled">
+            <li>
+              <i class="fas fa-check-circle"></i> Expert makeup artists
+              specialized in minimalistic techniques
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i> Customizable looks tailored to
+              your personal style
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i> High-quality products for a
+              natural finish
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i> Friendly and professional
+              service
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Covered Section -->
+    <div style="background-color:  #f3e8e8; padding: 20px">
+      <div class="container text-center mt-5">
+        <h2>Why Choose Us for Your Minimal Makeup?</h2>
+        <p>
+          Our team is dedicated to enhancing your natural beauty with our
+          minimalist approach, ensuring you feel confident and radiant.
+        </p>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card service-card">
+              <div class="card-body">
+                <h5 class="card-title font-weight-bold">Makeup Consultation</h5>
+                <p class="card-text">
+                  We collaborate with you to understand your desired look and
+                  preferences for minimal makeup.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card service-card">
+              <div class="card-body">
+                <h5 class="card-title font-weight-bold">Skin Prep</h5>
+                <p class="card-text">
+                  Proper skin preparation is essential for a flawless minimal
+                  makeup application.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card service-card">
+              <div class="card-body">
+                <h5 class="card-title font-weight-bold">Minimal Makeup</h5>
+                <p class="card-text">
+                  Our artists will create a natural look that enhances your
+                  features effortlessly.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card service-card">
+              <div class="card-body">
+                <h5 class="card-title font-weight-bold">Hairstyling</h5>
+                <p class="card-text">
+                  Complement your minimal look with soft, elegant hairstyles
+                  designed to enhance your features.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card service-card">
+              <div class="card-body">
+                <h5 class="card-title font-weight-bold">Touch-ups</h5>
+                <p class="card-text">
+                  Keep your minimal look fresh throughout the day with our
+                  touch-up services.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card service-card">
+              <div class="card-body">
+                <h5 class="card-title font-weight-bold">Makeup Trial</h5>
+                <p class="card-text">
+                  Experience your chosen minimal look ahead of time for peace of
+                  mind before the big day.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+      <div class="container">
+        @nikitashetty nocopyright
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
